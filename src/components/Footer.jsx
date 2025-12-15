@@ -58,7 +58,7 @@ const GoogleIcon = () => (
 
       <div className="social-links">
         <a
-          href="mailto:ashirvac.khanal@gmail.com"
+          href="mailto:ashirvad.khanal@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -55,7 +55,7 @@ const Hero = () => {
             View My Work
           </a>
 
-          <a href="mailto:akhanal222@uncg.edu" className="btn-secondary">
+          <a href="mailto:ashirvad.khanal@gmail.com" className="btn-secondary">
             Get In Touch
           </a>
         </div>
