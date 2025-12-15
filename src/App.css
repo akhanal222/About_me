@@ -1,0 +1,490 @@
+/* --- 1. GLOBAL RESET AND SIMPLE FONT --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root {
+  /* Color Palette (Deep Charcoal, Navy, Subtle Gold) */
+  --color-accent: #FFA500;
+  /* Subtle Gold/Orange for primary emphasis */
+  --color-secondary-accent: #1976D2;
+  /* Deep Navy Blue for secondary elements */
+  --color-background-deep: #121212;
+  /* Very Deep Charcoal/Black */
+  --color-surface-dark: #1E1E1E;
+  /* Slightly lighter surface for cards */
+  --color-text-light: #E0E0E0;
+  --color-text-muted: #A0A0A0;
+
+  /* Typography */
+  --font-main: 'Inter', sans-serif;
+
+  /* Spacing and Geometry */
+  --spacing-xl: 120px;
+  --spacing-lg: 80px;
+  --spacing-md: 40px;
+  --border-radius: 4px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-background-deep);
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-text-light);
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-accent);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-secondary-accent);
+}
+
+/* --- 2. LAYOUT & UTILITIES --- */
+
+.portfolio-app main {
+  padding-top: 80px;
+}
+
+.section-padding {
+  padding: var(--spacing-lg) var(--spacing-md);
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-secondary-accent);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* --- 3. BUTTONS (Clean Fill/Outline Style) --- */
+
+.btn-primary,
+.btn-secondary,
+.btn-resume {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid var(--color-accent);
+  margin: 5px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.card-links {
+  margin-top: 20px;
+  /* <--- This separates the entire link group from content above */
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-background-deep);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--color-accent);
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.btn-secondary,
+.btn-resume {
+  background-color: transparent;
+  color: var(--color-accent);
+}
+
+.btn-secondary:hover,
+.btn-resume:hover {
+  background-color: var(--color-accent);
+  color: var(--color-background-deep);
+}
+
+/* --- 4. HEADER/NAV BAR --- */
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: rgba(18, 18, 18, 0.98);
+  /* Near black, almost opaque */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.nav-bar .logo a {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.nav-links a {
+  margin-left: 25px;
+  color: var(--color-text-light);
+  font-weight: 400;
+}
+
+.nav-links a:hover {
+  color: var(--color-secondary-accent);
+}
+
+/* --- 5. HERO SECTION --- */
+
+.hero-section {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: var(--spacing-md);
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.greeting {
+  color: var(--color-secondary-accent);
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-size: 4.5em;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-text-light);
+}
+
+.tagline {
+  font-size: 2.2em;
+  color: var(--color-text-muted);
+  margin-bottom: 25px;
+}
+
+.description {
+  max-width: 600px;
+  font-size: 1.1em;
+  color: var(--color-text-light);
+  margin-bottom: 30px;
+}
+
+/* --- 6. ABOUT SECTION --- */
+
+.about-section h3 {
+  color: var(--color-accent);
+  margin-top: var(--spacing-md);
+  font-weight: 700;
+}
+
+.about-section .content-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.skill-tag {
+  display: inline-block;
+  background-color: var(--color-surface-dark);
+  color: var(--color-text-light);
+  padding: 8px 15px;
+  margin: 5px 8px 5px 0;
+  border-radius: var(--border-radius);
+  font-size: 0.9em;
+  border: 1px solid var(--color-text-muted);
+}
+
+.course-list li {
+  background-color: var(--color-surface-dark);
+  padding: 10px;
+  margin-bottom: 8px;
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--border-radius);
+}
+
+/* --- 7. PROJECTS SECTION --- */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.project-card {
+  background-color: var(--color-surface-dark);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 165, 0, 0.15);
+  /* Subtle amber shadow on hover */
+  border: 1px solid var(--color-accent);
+}
+
+.card-title {
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.card-description {
+  color: var(--color-text-muted);
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+/* --- 7. PROJECTS SECTION --- */
+/* ... existing styles for .project-card and .card-description ... */
+
+.tech-tag {
+  /* BACKGROUND AND TEXT */
+  background-color: #333333;
+  /* Subtle dark gray background */
+  color: var(--color-text-light);
+
+  /* SPACING AND SHAPE */
+  display: inline-block;
+  /* Essential for margins to work */
+  padding: 5px 10px;
+  /* Padding inside the tag */
+  font-size: 0.8em;
+  border-radius: 2px;
+
+  /* HORIZONTAL AND VERTICAL MARGINS */
+  margin: 0 8px 10px 0;
+  /* Top/Bottom/Left: 0, Right: 8px. Bottom: 10px (for next row of tags) */
+}
+
+/* Ensure the entire tech-stack container has vertical space */
+.tech-stack {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  /* Adds a bit of separation above the tags */
+}
+
+/* Ensure the button links are far enough below the tags */
+.card-links {
+  margin-top: 20px;
+  /* Separates links from tech tags (this is the key separator) */
+}
+
+.card-links a {
+  border: 1px solid var(--color-text-muted);
+  padding: 8px 15px;
+  border-radius: var(--border-radius);
+  font-size: 0.9em;
+  margin-right: 10px;
+  background: transparent;
+}
+
+.card-links a:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* --- 7.5. CERTIFICATIONS SECTION --- */
+
+/* Grid layout for all certification cards */
+.certifications-grid {
+  display: grid;
+  /* This ensures cards are responsive and always a minimum of 300px wide */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+  /* Use the standard gap for consistency */
+  margin-top: 50px;
+  /* Space below the Certifications header */
+}
+
+/* Styling for an individual certification card */
+.cert-card {
+  background-color: var(--color-surface-dark);
+  /* Dark surface background */
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* IMPORTANT: Adds a vertical color highlight on the left for visual pop */
+  border-left: 5px solid var(--color-secondary-accent);
+  transition: transform 0.3s;
+  display: flex;
+  /* Ensures elements stack cleanly */
+  flex-direction: column;
+}
+
+.cert-card:hover {
+  transform: translateY(-3px);
+  /* Subtle lift on hover */
+  box-shadow: 0 6px 15px rgba(25, 118, 210, 0.2);
+  /* Subtle blue shadow */
+}
+
+/* Credential Name */
+.cert-name {
+  color: var(--color-accent);
+  /* Use gold/orange accent color */
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* Issuer Name */
+.cert-issuer {
+  color: var(--color-text-muted);
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+/* Date of Completion */
+.cert-date {
+  color: var(--color-text-muted);
+  font-size: 0.85em;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  /* Pushes the button to the bottom */
+}
+
+/* Button style for the Verification Link */
+.btn-cert-verify {
+  /* Outline Style */
+  background-color: transparent;
+  border: 1px solid var(--color-secondary-accent);
+  color: var(--color-secondary-accent);
+
+  /* Spacing and Shape */
+  padding: 8px 15px;
+  border-radius: var(--border-radius);
+  font-size: 0.9em;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-cert-verify:hover {
+  /* Filled Style on Hover */
+  background-color: var(--color-secondary-accent);
+  color: var(--color-background-deep);
+  /* Text becomes dark on hover */
+}
+
+/* --- 8. FOOTER SECTION --- */
+
+.footer {
+  text-align: center;
+  padding: var(--spacing-md) 0;
+  background-color: #0A0A0A;
+  /* Deepest black for contrast */
+  border-top: 1px solid #333333;
+}
+
+.contact-header {
+  font-size: 1.8em;
+  color: var(--color-secondary-accent);
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: var(--color-text-light);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 300px;
+  margin-bottom: 10px;
+  gap: 30px;
+}
+
+.social-links a:hover {
+  color: var(--color-accent);
+}
+
+.copyright {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: var(--color-text-muted);
+}
+
+.google-icon {
+  transform: scale(1.15);
+  margin-top: 20px;
+}
+
+
+/* --- 9. RESPONSIVENESS --- */
+
+@media (max-width: 992px) {
+  .hero-section {
+    min-height: 70vh;
+    padding-top: 50px;
+  }
+
+  .name {
+    font-size: 3.5em;
+  }
+
+  .tagline {
+    font-size: 1.8em;
+  }
+
+  .about-section .content-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-bar {
+    padding: 15px 20px;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .nav-links a {
+    margin: 0 8px;
+  }
+
+  .name {
+    font-size: 3em;
+  }
+
+  .tagline {
+    font-size: 1.5em;
+  }
+
+  .section-padding {
+    padding: 60px 20px;
+  }
+}
