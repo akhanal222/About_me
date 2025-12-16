@@ -7,7 +7,7 @@ const certificationsData = [
     id: 1,
     name: "AWS Certified Cloud Practitioner (CLF-C01)",
     issuer: "Amazon Web Services (AWS)",
-    date: "Obtained: June 2024",
+    date: "Obtained: June 2025",
     verifyLink: "https://www.credly.com/badges/5344163e-bde7-40d6-91b3-2b02bc0f0fe1/public_url" 
   }
 ];
