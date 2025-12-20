@@ -12,7 +12,7 @@ const Header = () => {
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a
-          href="https://drive.google.com/file/d/1jk92_hnoYrAJDh00SC_g2ersfKhN6AoX/view?usp=sharing"
+          href="https://drive.google.com/file/d/1l1yB9NhLgTPON41zUDgnGstXxZZUUgKF/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-resume"
